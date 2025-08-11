@@ -20,11 +20,12 @@ dependencies = [
     "absl-py",
     "dataclasses-json",
     "etils",
-    "jax[cuda]",
+    "jax",
     "netCDF4",
     "numpy",
     "orbax",
     "scipy",
+    "pandas",
 ]
 
 [project.urls]
