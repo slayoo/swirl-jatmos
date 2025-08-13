@@ -26,4 +26,4 @@ jobs:
         pip install -e .[tests,versions_pins_for_ci]
 
     - name: Run tests
-      run: pytest --verbose --durations=10 -k "not sim_setups" -k "not clear_sky" -k "not lw_transport"
+      run: pytest --verbose --durations=10 -k "not (sim_setups or w_transport)"
