@@ -300,6 +300,7 @@ class ClearSkyTest(parameterized.TestCase):
         expected_sw_flux_down[rfmip_expt_id, rfmip_site, :]
     )
 
+    atmos_state_ds.close()
     atol = 0.2
     np.testing.assert_allclose(
         _remove_halos(lw_fluxes['flux_down']),
