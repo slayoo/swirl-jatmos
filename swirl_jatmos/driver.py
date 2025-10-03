@@ -15,6 +15,7 @@
 """Driver for Jatmo simulations."""
 
 import os
+import sys
 import time
 from typing import Callable, TypeAlias
 
@@ -64,6 +65,7 @@ _LABEL_CHECKPOINTS_BY_CYCLE = flags.DEFINE_bool(
 
 
 FLAGS = flags.FLAGS
+FLAGS(sys.argv)
 DEBUG_CHECK_FOR_NANS = check_states_valid.DEBUG_CHECK_FOR_NANS
 
 Array: TypeAlias = jax.Array

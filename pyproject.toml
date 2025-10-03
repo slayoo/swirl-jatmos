@@ -20,11 +20,32 @@ dependencies = [
     "absl-py",
     "dataclasses-json",
     "etils",
-    "jax[cuda]",
+    "jax",
     "netCDF4",
     "numpy",
     "orbax",
     "scipy",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pandas",
+    "pytest",
+]
+versions_pins_for_ci = [
+    "absl-py==2.3.1",
+    "dataclasses-json==0.6.7",
+    "etils==1.13.0",
+    "jax==0.7.0",
+    "netCDF4==1.7.2",
+    "numpy==2.3.2",
+    "orbax==0.1.9",
+    "pytest==8.4.1",
+    "scipy==1.16.1",
+]
+
+cuda = [
+  "jax[cuda]",
 ]
 
 [project.urls]

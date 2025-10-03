@@ -27,7 +27,7 @@ from swirl_jatmos import jatmos_types
 
 Array: TypeAlias = jax.Array
 
-_NETCDF_DATA_DIR = '/tmp/netcdf/data'
+_NETCDF_DATA_DIR = os.path.join('tmp', 'netcdf', 'data')
 
 
 def _bytes_to_str(split_str):

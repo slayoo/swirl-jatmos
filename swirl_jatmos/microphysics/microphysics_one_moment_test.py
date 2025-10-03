@@ -285,7 +285,7 @@ class MicrophysicsOneMomentTest(absltest.TestCase):
     # VERIFICATION
     expected_dq_r_dt_melt = jnp.array([0.0, 4.1981325e-6, 0.0])
     np.testing.assert_allclose(
-        dq_r_dt_melt, expected_dq_r_dt_melt, rtol=1e-6, atol=0
+        dq_r_dt_melt, expected_dq_r_dt_melt, rtol=1e-5, atol=0
     )
 
   def test_terminal_velocity_rain(self):

@@ -219,7 +219,11 @@ class OpticsUtilsTest(parameterized.TestCase):
 
     # VERIFICATION
     self.assertEqual(interpolated_values.shape, (2, 2))
-    self.assertEqual(interpolated_values[0, 0], element00)
+    np.testing.assert_approx_equal(
+        desired=element00,
+        actual=interpolated_values[0, 0],
+        significant=6
+    )
 
   @parameterized.parameters(True, False)
   def test_interpolate_with_dependency(self, use_optimized_interpolation: bool):

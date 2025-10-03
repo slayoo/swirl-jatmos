@@ -15,6 +15,7 @@
 """Tests whether the atmospheric conditions are loaded properly from a proto."""
 
 from typing import TypeAlias
+import os
 
 from absl.testing import absltest
 from etils import epath
@@ -32,9 +33,9 @@ Array: TypeAlias = jax.Array
 IndexAndWeight: TypeAlias = optics_utils.IndexAndWeight
 Interpolant: TypeAlias = optics_utils.Interpolant
 
-_LW_LOOKUP_TABLE_FILENAME = 'rrtmgp/optics/rrtmgp_data/rrtmgp-gas-lw-g256.nc'
-_SW_LOOKUP_TABLE_FILENAME = 'rrtmgp/optics/rrtmgp_data/rrtmgp-gas-sw-g224.nc'
-_GLOBAL_MEANS_FILENAME = 'rrtmgp/optics/test_data/vmr_global_means.json'
+_LW_LOOKUP_TABLE_FILENAME = os.path.join('rrtmgp', 'optics', 'rrtmgp_data', 'rrtmgp-gas-lw-g256.nc')
+_SW_LOOKUP_TABLE_FILENAME = os.path.join('rrtmgp', 'optics', 'rrtmgp_data', 'rrtmgp-gas-sw-g224.nc')
+_GLOBAL_MEANS_FILENAME = os.path.join('rrtmgp', 'optics', 'test_data', 'vmr_global_means.json')
 
 root = epath.resource_path('swirl_jatmos')
 _LW_LOOKUP_TABLE_FILEPATH = root / _LW_LOOKUP_TABLE_FILENAME
